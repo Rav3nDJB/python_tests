@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="{% static 'contacts/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'contacts/bootstrap-5.1.1-dist/css/bootstrap.min.css' %}" />
+       {% include "contacts/header.html" %}
+     <body>
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    {% block main_content %}{% endblock %}
+                </div>
+            </div>
+     </body>
+     {% include "contacts/footer.html" %}
+  </html>

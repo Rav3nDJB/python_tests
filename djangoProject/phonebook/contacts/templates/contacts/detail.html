@@ -1,0 +1,9 @@
+{% extends 'contacts/base.html' %}
+{% block main_content %}
+    <h3> {{contacts.name}} </h3>
+    {% if error_message %}<p><strong> {{error_message}} </strong></p> {% endif %}
+        {% csrf_token %}
+        <label for="contact{{forloop.counter}}">{{contact.name}}</label> <label for="contact{{forloop.counter}}">{{contact.surname}}</label> <br>
+        <label for="contact{{forloop.counter}}">{{contact.phone_number}}</label> <br>
+        <label for="contact{{forloop.counter}}">{{contact.email}}</label> <br>
+{% endblock %}

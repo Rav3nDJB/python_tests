@@ -1,0 +1,13 @@
+{% extends 'contacts/base.html' %}
+{% block main_content %}
+{% if error_message %}<p><strong> {{error_message}} </strong></p> {% endif %}
+{% csrf_token  %}
+ <form action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+     <label for="name">Name:</label> <input type="text" id="name" name="name"/></br>
+    <label for="surname">Surname:</label> <input type="text" id="surname" name="surname"/></br>
+     <label for="phone">Phone Number:</label> <input type="tel" id="phone" name="phone"></br>
+   <label for="email">Email:</label> <input type="email" id="email" name="email"/></br>
+    <input type="submit" value="create"/>
+</form>
+{% endblock %}

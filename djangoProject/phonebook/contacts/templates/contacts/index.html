@@ -1,0 +1,18 @@
+{% extends 'contacts/base.html' %}
+{% block main_content %}
+
+{% if contacts %}
+    <ul>
+        {% for contact in contacts %}
+            <li><a href={% url "detail" contact.contact_id %}><b>{{contact.name}}</b></a></li>
+        {% endfor %}
+    </ul>
+<form action="{% url 'create' %}" method="post">
+  {% csrf_token %}
+    <input type="submit" value="create" id="create" />
+</form>
+{% else %}
+    <p>You don't have any contacts. Please add some.</p>
+{% endif %}
+
+{% endblock %}
